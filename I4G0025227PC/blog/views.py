@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
@@ -11,9 +10,6 @@ from blog.models import Post
 
 class PostListView(ListView):
     model = Post
-
-    def get_queryset(self):
-        return super().get_queryset().filter(status="published")
 
 
 class PostCreateView(CreateView):
